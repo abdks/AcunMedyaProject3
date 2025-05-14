@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<h2>Kayıt Ol</h2>
+
+<form method="post" action="/Test/Register" enctype="multipart/form-data">
+    <div>
+        <label for="UserName">Kullanıcı Adı</label>
+        <input type="text" id="UserName" name="UserName" />
+    </div>
+
+    <div>
+        <label for="Password">Şifre</label>
+        <input type="password" id="Password" name="Password" />
+    </div>
+
+    <div>
+        <label for="ProfileImage">Profil Resmi</label>
+        <input type="file" id="ProfileImage" name="ProfileImage" accept="image/*" />
+    </div>
+
+    <div>
+        <button type="submit">Kayıt Ol</button>
+    </div>
+</form>

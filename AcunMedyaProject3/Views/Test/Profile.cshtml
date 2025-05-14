@@ -1,0 +1,17 @@
+﻿@model AcunMedyaProject3.Entities.Test
+@{
+    Layout = null;
+}
+
+
+<h2>Profil</h2>
+
+<div>
+    <h3>Kullanıcı Adı: @Model.UserName</h3>
+    <p><strong>Şifre:</strong> @Model.Password</p>
+
+    <div>
+        <h4>Profil Resmi</h4>
+        <img src="@Model.ProfileImagePath" alt="Profil Resmi" width="150" height="150" />
+    </div>
+</div>

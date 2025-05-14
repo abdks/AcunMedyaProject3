@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Giriş Yap";
+}
+
+<h2>Giriş Yap</h2>
+
+@* Sadece ModelState hataları gösteriliyor *@
+@if (ViewData.ModelState.ErrorCount > 0)
+{
+    <div style="color:red">
+        <p>@ViewData.ModelState[string.Empty]?.Errors.FirstOrDefault()?.ErrorMessage</p>
+    </div>
+}
+
+
+<form method="post" action="/Test/Login">
+    <div>
+        <label for="UserName">Kullanıcı Adı</label>
+        <input type="text" id="UserName" name="UserName" />
+    </div>
+
+    <div>
+        <label for="Password">Şifre</label>
+        <input type="password" id="Password" name="Password" />
+    </div>
+
+    <div>
+        <button type="submit">Giriş Yap</button>
+    </div>
+</form>

@@ -36,6 +36,18 @@ public class AccountController : Controller
     [HttpPost]
     public async Task<IActionResult> Login(Users users)
     {
+
+        if(!ModelState.IsValid)
+        {
+
+        }
+
+
+
+
+
+
+
         //abdks 123
         //abdks 1234
         var user = _projectContext.Users.FirstOrDefault(x=>x.UserName == users.UserName && x.Password == users.Password);

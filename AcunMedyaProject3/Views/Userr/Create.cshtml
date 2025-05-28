@@ -1,0 +1,39 @@
+﻿@model AcunMedyaProject3.Entities.Userr
+
+@{
+    ViewBag.Title = "Create User";
+}
+
+
+
+<h3>Kullanıcı oluşturma sayfası</h3>
+
+
+@using (Html.BeginForm("Create", "Userr", FormMethod.Post))
+{
+    <div>
+        @Html.LabelFor(model => model.Name)
+        @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+    </div>
+
+    <div>
+        @Html.LabelFor(model => model.Email)
+        @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+    </div>
+
+    <div>
+        @Html.LabelFor(model => model.Age)
+        @Html.TextBoxFor(model => model.Age, new { @class = "form-control", type = "number" })
+        @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+
+}
+
+<h2 style="color:red">@ViewBag.Message</h2>
+
+
+        

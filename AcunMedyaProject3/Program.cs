@@ -1,10 +1,36 @@
 using AcunMedyaProject3.Context;
+using AcunMedyaProject3.Entities;
+using AcunMedyaProject3.Validation;
+using FluentValidation;
 using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews(options =>
+{
+    options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true;
+});
+
+
+
+
+
+builder.Services.AddScoped<IValidator<Userr>,UserValidator>();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //PROJEMÝZDE DBCONTEXTÝ TANIMLIYORUZ.
 builder.Services.AddDbContext<ProjectContext>();
@@ -12,7 +38,7 @@ builder.Services.AddDbContext<ProjectContext>();
 //login için
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
 {
-    options.LoginPath = "/Account/Login/"
+    options.LoginPath = "/Account/Login/";
     //LogOut EKLENÝLECEK
 });
 
